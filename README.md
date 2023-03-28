@@ -1,1 +1,1 @@
-# web-app
+Main HTML file is in "main" folder.
