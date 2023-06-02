@@ -1,0 +1,547 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+section {
+    scroll-margin-top: 7vh;
+}
+
+.row {
+    overflow: hidden;
+}
+ 
+
+#welcome-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: -10;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    background-image: linear-gradient(to bottom, #0e061d, #0a032b);
+
+  }
+
+  #welcome-page h1 {
+    font-size: 6rem;
+    font-weight: 600;
+    color: #fff;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid #2c12a2;
+    animation: printed-text 2s steps(21),
+                flashin-border .75s step-start infinite;
+
+  }
+  @media (max-width: 1028px){
+    #welcome-page h1 {
+        font-size: 3.5rem;
+    }
+  }
+ 
+  @media (max-width: 600px){
+    #welcome-page h1 {
+        font-size: 2.7rem;
+    }
+  }
+  @media (max-width: 500px){
+    #welcome-page h1 {
+        font-size: 1.5rem;
+    }
+  }
+
+
+  @keyframes flashin-border{
+    0%{
+      border-color: #2c12a2;
+    }
+    50%{
+      border-color: transparent;
+    }
+    100%{
+      border-color: #2c12a2;
+    }
+  }
+  
+  @keyframes printed-text{
+    from {
+      width: 0%;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;
+   
+  }
+  /* Add a fade out animation to the welcome page */
+  #welcome-page.fade-out {
+    opacity: 0;
+    
+  }
+  
+  /* Set the styles for the main page */
+  #main-page {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-image: linear-gradient(to bottom,  #0e061d, rgb(7, 9, 27));
+  }
+  
+  /* Add a fade in animation to the main page */
+  #main-page.fade-in {
+    opacity: 1;
+    
+  }
+
+
+  /* script-feat */
+  .hiddenL {
+    opacity: 0;
+    transition: all 2s;
+    filter: blur(5px);
+    transform: translateX(-100%);
+}
+.hiddenR {
+    opacity: 0;
+    transition: all 1.5s;
+    filter: blur(5px);
+    transform: translateX(100%);
+}
+.hiddenLhead {
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(5px);
+    transform: translateX(-100%);
+}
+
+.hiddenTop {
+    opacity: 0;
+    transition: all 2s;
+    filter: blur(5px);
+    transform: translateY(-50%)
+}
+
+
+.show {
+    opacity: 1;
+    filter:blur(0);
+    transform: translateX(0);
+    transform: translateY(0);
+}
+
+/* navbar */
+
+#nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.navbar {
+    background-image: linear-gradient(to bottom, #0e061d, #0a032b);
+    padding: 0 !important;
+    
+    
+}
+#nav-bar img {
+    width: 50px;
+    margin-left: 20px;
+    border-radius: 50%;
+    
+}
+.navbar-nav li a {
+    color: #fff !important;
+    font-weight: 600;
+    float: right;
+    text-align: left;
+    
+
+}
+
+.fa-bars {
+    color: #fff ;
+    font-size: 36px !important;
+    display: flex;
+    
+    
+}
+
+.navbar-nav li a:hover {
+    position: relative; 
+    top: -5px;
+    
+}
+
+
+
+.navbar-nav li {
+    padding: 15px 10px;
+    
+}
+.navbar-nav li:last-child {
+    margin-right: 20px;
+    
+}
+
+@media (max-width: 991px) {
+    .navbar-nav li:last-child {
+        margin-right: 0;
+        
+    }
+    .navbar-nav li {
+        padding: 0 10px;
+        
+    }
+}
+/* banner */
+
+#banner {
+    background-image: url(/doomies/assets/background.png);
+
+    color: black;
+    padding-top: 5%;
+    width: 100%;
+    height: 900px;
+    border-bottom: 10px solid #0e061d;
+    align-items: center;
+    /* background-size: cover; */
+    background-position: center;
+    
+    
+}   
+
+
+.promo-title {
+    font-size: 7.5rem; 
+    font-family: 'Climate Crisis', cursive;
+    letter-spacing: 40px;
+    background: linear-gradient(45deg, #0e061d, #2c12a2, #0e061d, #2c12a2, #0e061d, #2c12a2, #0e061d, #2c12a2, #0e061d);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: animate 50s linear infinite;
+    background-size: 400%;
+    -webkit-text-stroke: 1px #5951b0;
+}
+
+@keyframes animate {
+    0%{
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+
+/* @media screen and (-webkit-min-device-pixel-ratio:0) {
+    .promo-title {
+        
+    }
+  }
+ */
+@media (max-width: 830px) {
+    .promo-title {
+        font-size: 3.3rem; 
+        letter-spacing: 15px;
+    }
+
+}
+@media (max-width: 500px) {
+    .promo-title {
+        font-size: 2.8rem; 
+        letter-spacing: 10px;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 830px){
+    .promo-title {
+        font-size: 5.5rem; 
+        letter-spacing: 10px;
+    }
+}
+#banner p {
+    font-size: 1.7rem;
+    margin-top: 40px;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-weight: 600;
+    
+
+}
+.banner {
+    padding-top: 150px;
+    color:#fff
+}
+
+
+
+/* mission */
+
+#mission {
+    background-image: linear-gradient(to bottom,  #0e061d, rgb(7, 9, 27));
+    color: #fff;
+    
+}
+
+.tm {
+    font-size: 3.5rem;
+    padding: 55px 0;
+    border-bottom: 5px solid #fff;
+    
+    
+}
+
+#mission h2 {
+    margin-bottom: 40px;
+}
+
+#mission p {
+    font-size: 1.5rem;
+    padding-top: 50px;
+    font-weight: 300;
+}
+#mission h3 {
+    padding-top: 50px;
+}
+#mission .mission-img {
+    width: 100%;
+    border-radius: 30px;
+    padding: 0;
+    border: 5px solid black;
+    
+}
+@media (min-width: 768px) and (max-width:1190px) {
+    #mission p {
+        font-size: 1rem;
+        padding-top: 10px !important;
+    }
+    #mission h3 {
+        padding-top: 0;
+    }
+    #mission .mission-img {
+        
+        margin-top: 70px;
+        
+        
+    }
+}
+/* team */
+
+#team {
+    background-image: linear-gradient(to bottom,  #0e061d, rgb(7, 9, 27));
+    color: #fff;
+}
+
+#team h2 {
+    margin-bottom: 50px;
+}
+#team img {
+    border-radius: 50%;
+    border: 3px solid #100428;
+    width: 250px;
+    
+}
+#team h4 {
+    font-size: 2.5rem;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+#team p {
+    font-size: 1.2rem;
+}
+.dec {  
+    
+    padding: 3px;
+    border-radius: 28px;
+    border: 1px solid #04152e;
+    text-decoration: none;
+}
+
+.tm1 {
+    font-size: 1.5rem !important;
+    padding-bottom: 30px;
+    
+}
+
+@media (max-width: 991px) and (min-width: 769px) {
+    #team img {
+        width: 220px;
+    }
+    .dec {
+        font-size: 2rem;
+        
+    }
+
+}
+
+/* roadmap */
+
+#roadmap {
+    background-image: linear-gradient(to bottom,  #0e061d, rgb(7, 9, 27));
+    color: #fff;
+}
+
+#roadmap h3 {
+    font-size: 2.2rem !important;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+#roadmap ul li {
+    font-size: 1.5rem;
+    border-left: 1px solid #fff;
+    padding-left: 10px;
+    padding-bottom: 12px;
+}
+
+.foot {
+    font-size: 1.5rem;
+    
+    margin-top: 80px;
+}
+
+/* game */
+
+#game {
+    background-image: linear-gradient(to bottom,  #0e061d, rgb(7, 9, 27));
+    color: #fff;
+    padding-bottom: 40px !important;
+    
+}
+
+#game img {
+    width: 100%;
+    border-radius: 30px;
+    padding: 0;
+    border: 5px solid black;
+    
+}
+
+
+
+#game p {
+    padding-top: 80px !important;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+#game h2 {
+    margin-bottom: 40px;
+}
+
+@media (min-width: 768px) and (max-width:1190px) {
+    #game p {
+        font-size: 1rem;
+        padding-top: 10px !important;
+    }
+}
+
+/* form */
+
+#wl {
+    color: #fff;
+    overflow: hidden;
+}
+
+form  h3{
+    padding: 20px 0;
+}
+
+.soon {
+    padding: 40px 0;
+    font-size: 2.5rem;
+}
+
+#wl input {
+    background: transparent;
+    border: transparent;
+    width: 300px;
+    color: #fff;
+    height: auto;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+#wl textarea {
+    background: transparent;
+    border: transparent;
+    width: 300px;
+    color: #fff;
+    height: auto;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+#wl .row {
+    margin-top: 60px;
+}
+
+#wl .form-btn {
+    width: 93%;
+    display: flex;
+    justify-content: center;
+}
+
+#wl button {
+    background-color: blue;
+    margin-bottom: 30px;
+    width: 150px;
+    margin-top: 30px;
+}
+
+@media (max-width: 767px) {
+    #wl .form-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* footer */
+
+#footer {
+    color: #fff;
+    padding-top: 20px;
+    background-image: linear-gradient(to top, #0e061d, #0a032b);
+    
+}
+
+
+.foot-text {
+    margin-bottom: 0;
+    padding-bottom: 0px;
+    text-align: center;
+}
+
+
+#footer a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+
+
+}
+
+#footer i {
+    color: blue;
+    font-size: 1.85rem;
+    letter-spacing: 5px;
+}
+
+
+.aa {
+    font-size: 1.5rem;
+    
+
+}
+
